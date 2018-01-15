@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="WDPH_CustomProductTabs::5_wdph_customtabs_settings" title="Custom Product Tabs" module="WDPH_CustomProductTabs" sortOrder="50" action="adminhtml/system_config/edit/section/wdph_customtabs_main" parent="WDPH_Base::0_wdph" resource="WDPH_CustomProductTabs::main_settings" />
+	</menu>
+</config>
