@@ -32,20 +32,24 @@ class Description extends \Magento\Catalog\Block\Product\View\Description
 			$counter = 0;
 			foreach($tabs as $key => $tab)
 			{
+				$attrContent = '';
+				$cmsContent = '';
+				if(trim($tab['attribute_code']))
+				{
+					$attrContent = $this->getAttrValue(trim($tab['attribute_code']));
+				}
+				if(trim($tab['cms_block_code']))
+				{
+					$cmsContent = $this->getStaticBlockContent(trim($tab['cms_block_code']));
+				}				
+				if(!$attrContent && !$cmsContent) continue;
+				$resultTabs[$counter]['tab_content'] = $attrContent . $cmsContent;
 				$resultTabs[$counter]['key'] = $key;
 				$resultTabs[$counter]['sort_order'] = intval($tab['sort_order']);
 				$resultTabs[$counter]['tab_title'] = (trim($tab['tab_title'])) ? trim($tab['tab_title']) : 'Oops, someone forgot set tab title :(';
 				$resultTabs[$counter]['tab_content_attr'] = '';
 				$resultTabs[$counter]['tab_content_block'] = '';
-				$resultTabs[$counter]['tab_content_error'] = '';
-				if(trim($tab['attribute_code']))
-				{
-					$resultTabs[$counter]['tab_content_attr'] = $this->getAttrValue(trim($tab['attribute_code']));
-				}
-				if(trim($tab['cms_block_code']))
-				{
-					$resultTabs[$counter]['tab_content_block'] = $this->getStaticBlockContent(trim($tab['cms_block_code']));
-				}
+				$resultTabs[$counter]['tab_content_error'] = '';				
 				$counter++;
 			}
 			$resultTabs = $this->sorter($resultTabs);			

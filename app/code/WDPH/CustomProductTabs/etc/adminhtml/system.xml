@@ -11,7 +11,19 @@
                     <label>Custom Tabs Enabled</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
-				<field id="custom_tabs" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+				<field id="remove_attrtab" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Remove "More Information" Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="remove_desctab" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Remove "Details" Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="remove_revtab" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Remove "Reviews" Tab</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+				<field id="custom_tabs" translate="label" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Product View Page Custom Tabs</label>
                     <frontend_model>WDPH\CustomProductTabs\Block\Adminhtml\Form\Field\Customtabs</frontend_model>
                     <backend_model>WDPH\CustomProductTabs\Model\Config\Customtabs</backend_model>

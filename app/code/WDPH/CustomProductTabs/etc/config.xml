@@ -4,6 +4,9 @@
 		<wdph_customtabs_main>
 			<general>
 				<enabled>1</enabled>
+				<remove_attrtab>0</remove_attrtab>
+				<remove_desctab>0</remove_desctab>
+				<remove_revtab>0</remove_revtab>
 			</general>			
 		</wdph_customtabs_main>
 	</default>
